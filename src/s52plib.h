@@ -152,6 +152,8 @@ public:
     bool ObjectRenderCheckCat( ObjRazRules *rzRules, ViewPort *vp );
     bool ObjectRenderCheckCS( ObjRazRules *rzRules, ViewPort *vp );
 
+    void ComputeCSRules( ObjRazRules *rzRules );
+
     static void DestroyLUP( LUPrec *pLUP );
     static void ClearRulesCache( Rule *pR );
     DisCat findLUPDisCat(const char *objectName, LUPname TNAM);
@@ -284,6 +286,8 @@ public:
     
     double lastLightLat;
     double lastLightLon;
+
+    int reduceLOD( double LOD_meters, int nPoints, double *source, wxPoint2DDouble **dest);
     
 private:
     int S52_load_Plib( const wxString& PLib, bool b_forceLegacy );
@@ -322,7 +326,6 @@ private:
     
     void UpdateOBJLArray( S57Obj *obj );
 
-    int reduceLOD( double LOD_meters, int nPoints, double *source, wxPoint2DDouble **dest);
     
     int RenderLSLegacy( ObjRazRules *rzRules, Rules *rules, ViewPort *vp );
     int RenderLCLegacy( ObjRazRules *rzRules, Rules *rules, ViewPort *vp );

@@ -398,6 +398,21 @@ typedef struct _MultipointGeometryDescriptor{
 WX_DECLARE_HASH_MAP( unsigned int, VE_Element *, wxIntegerHash, wxIntegerEqual, VE_Hash );
 WX_DECLARE_HASH_MAP( unsigned int, VC_Element *, wxIntegerHash, wxIntegerEqual, VC_Hash );
 
+class LLRegion;
+
+class S57ObjRegion
+{
+public:
+
+      //  Public Methods
+      S57ObjRegion(S57Obj *o = 0, LLRegion *r = 0) : obj(o), region(r) {};
+      ~S57ObjRegion() {};
+
+      S57Obj *obj;
+      LLRegion *region;
+};
+
+
 class S57Obj
 {
 public:
