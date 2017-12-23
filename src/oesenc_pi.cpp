@@ -555,7 +555,7 @@ OESENC_HTMLMessageDialog *pinfoDlg;
 //---------------------------------------------------------------------------------------------------------
 
 oesenc_pi::oesenc_pi(void *ppimgr)
-      :opencpn_plugin_111(ppimgr)
+      :opencpn_plugin_115(ppimgr)
 {
       wxString vs;
       vs.Printf(_T("%d.%d.%d"), PLUGIN_VERSION_MAJOR, PLUGIN_VERSION_MINOR, PLUGIN_VERSION_PATCH);
