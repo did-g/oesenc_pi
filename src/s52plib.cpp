@@ -10809,7 +10809,30 @@ void PrepareS52ShaderUniforms(ViewPort *vp);
                         }
                     }
                 }
+                // Handle Quality of data toggle
+                bool bQuality = m_qualityOfDataOn;
+                if(!bQuality){
+                    AddObjNoshow("M_QUAL");
+                }
+                else{
+                    RemoveObjNoshow("M_QUAL");
+                    for( unsigned int iPtr = 0; iPtr < pOBJLArray->GetCount(); iPtr++ ) {
+                        OBJLElement *pOLE = (OBJLElement *) ( pOBJLArray->Item( iPtr ) );
+                        if( !strncmp( pOLE->OBJLName, "M_QUAL", 6 ) ) {
+                            pOLE->nViz = 1;         // force on
+                            break;
+                        }
+                    }
+                }
             }
+            #if 0
+            // XXX FIXME backport data quality On/Off
+            else if (0) { // if not category OTHER or MarinerStandard, then anchor-related features are always shown.
+                for( unsigned int c = 0; c < num; c++ ) {
+                    RemoveObjNoshow(categories[c]);
+                }
+            }
+            #endif
             m_myConfig = PI_GetPLIBStateHash();
         }
     }

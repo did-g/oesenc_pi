@@ -191,7 +191,7 @@ public:
     
     void SetAnchorOn(bool val);
     bool GetAnchorOn();
-    
+
     void SetQualityOfData(bool val);
     bool GetQualityOfData();
     
