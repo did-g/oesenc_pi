@@ -763,7 +763,6 @@ void eSENCChart::FreeObjectsAndRules()
 
 
 
-
 #define BUF_LEN_MAX 4000
 
 wxString eSENCChart::Get_eHDR_Name( const wxString& name000 )
