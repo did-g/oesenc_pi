@@ -9695,8 +9695,7 @@ ListOfS57ObjRegion *eSENCChart::GetHazards( const void *reg, ListOfS57ObjRegion 
                             land->Union( *e );
                             #endif
                         }
-                        else
-                            delete e;
+                        delete e;
                     }
                     continue; // done
                 }
