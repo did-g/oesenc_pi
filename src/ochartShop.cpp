@@ -1165,6 +1165,8 @@ int doDownload(oeSencChartPanel *chartDownload, int slot)
     if(slot == 1)
         downloadURL = chart->fileDownloadURL1;
 
+    // force a local download for testing, must end in zip
+    // downloadURL="http://127.1/nav-FRatl-2018-17.zip";
     uri.Create(downloadURL);
     
     wxString serverFilename = uri.GetPath();
