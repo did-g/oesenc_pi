@@ -168,11 +168,11 @@ public:
     
     void ProcessChartManageResult(wxString result);
     shopPanel           *m_shoppanel;
+
+    bool ScrubChartinfoList( void );
     
 private:
 //    wxString GetPermitDir();
-    bool ScrubChartinfoList( void );
-    
 
     int ProcessCellPermit( wxString &permit, bool b_confirm_existing );
 
