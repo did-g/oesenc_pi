@@ -545,19 +545,18 @@ void s52plib::DestroyRulesChain( Rules *top )
 {
     while( top != NULL ) {
         Rules *Rtmp = top->next;
-        
-        if( top->INST0 )
+
         free( top->INST0 ); // free the Instruction string head
 
         if( top->b_private_razRule ) // need to free razRule?
         {
             Rule *pR = top->razRule;
-            if( pR->exposition.LXPO ) delete pR->exposition.LXPO;
-            
+            delete pR->exposition.LXPO;
+
             free( pR->vector.LVCT );
-            
-            if( pR->bitmap.SBTM ) delete pR->bitmap.SBTM;
-            
+
+            delete pR->bitmap.SBTM;
+
             free( pR->colRef.SCRF );
             
             ClearRulesCache( pR );
@@ -1278,8 +1277,8 @@ void s52plib::DestroyRuleNode( Rule *pR )
         if( pR->definition.PADF == 'R' ) {
             wxBitmap *pbm = (wxBitmap *) ( pR->pixelPtr );
             delete pbm;
-}
-}
+        }
+    }
 }
 
 
