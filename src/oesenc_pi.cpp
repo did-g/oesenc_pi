@@ -83,7 +83,7 @@
 
 #endif
 
-#ifdef __MSVC__
+#ifdef __WXMSW__
 #include <windows.h>
 #include <shlobj.h>
 #endif
